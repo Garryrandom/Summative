@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="C:\Users\joshu\Pictures\Picture1.png">
+	<link href="styles.css" rel="stylesheet" type="text/css">
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+	<title>Effects of COVID-19</title>
+</head>
+<!--AJAX API-->
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+    google.charts.load('current', {packages: ['corechart', 'line']});
+    google.charts.setOnLoadCallback(drawBasic);
+    // calls function that draws the line graph from API
+    function drawBasic() {
+    // Creates the data table
+          var data = new google.visualization.DataTable();
+          data.addColumn('string', 'Month');
+          data.addColumn('number', 'Flights 2019');
+          data.addColumn('number', 'Flights 2020');
+    
+          data.addRows([
+            ["Jan", 92417, 97332],  
+            ["Feb", 112340, 96729],
+            ["Mar", 114268, 100050], 
+            ["Apr", 112963, 37353],  
+            ["May", 115547, 31567],  
+            ["Jun", 111084, 38820],  
+            ["Jul", 122295, 57016],  
+            ["Aug", 128631, 62716],
+            ["Sep", 109017, 66903],
+            ["Oct", 119657, 73420],
+            ["Nov", 115732, 62951],
+            ["Dec", 110116, 71553],
+          ]);
+    //Sets chart options
+          var options = { "title":"Number of commercial flights 2019 vs. 2020",
+            hAxis: {
+              title: 'Month'
+    
+              
+            },
+            vAxis: {
+              title: 'Flights',
+            },
+            titleTextStyle: {
+                fontSize: 24
+            }
+          };
+    //Draws the chart with options
+          var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+    
+          chart.draw(data, options);
+        }
+    </script>
+<body>
+  <!--Nav bar at top of page-->
+	<header>
+    <div class='nav-brand logo'> 
+      <a href="index.html"> 
+        <img src="Resources/logo2.svg" alt="logo" class="logo">
+      </a> 
+     </div> 
+     <nav class="navbar navbar-expand-md">
+    </div> 
+     <ul class="navbar-nav mr-auto">
+       <li class="nav-item active">
+         <a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a>
+       </li>
+       <li class="nav-item active">
+         <a class="nav-link" href="page 2 grids.html">Durham Statistics</a>
+       </li>
+       <li class="nav-item active">
+         <a class="nav-link" href="North East overview.html">North East Overview</a>
+       </li>
+       <li class="nav-item active">
+         <a class="nav-link" href="Effects of COVID-19.html">Effects of COVID-19</a>
+       </li>
+     </ul>
+  </nav>
+  </header>
+  <!--Start of page content-->
+  <!--"The effect of Coronavirus on the economy" text-->
+    <div class="container">
+        <br>
+        <h1>The effect of Coronavirus on the economy</h1>
+        <p>The coronavirus crisis has seen many people lose their jobs and unemployment rates have increased all over the world. Millions of workers have also been put on the government-backed furlough scheme, with around 19% of workers furloughed in the UK (Jones, Palumbo, & Brown, 2020). Global growth is projected at -4.9% (International Monetary Fund, 2020) and this is described as the worst decline since the Great Depression of the 1930s. This is a factor of the unemployment but also from a drop in consumer confidence, as shoppers are staying at home to stop the spread of the virus. </p>
+        <p>In addition to this, the travel industry, which contributed nearly 3 trillion U.S dollars in 2019 (Lock, 2020), was amongst the hardest industries hit this year. This is a result of airlines cutting flights, customers cancelling business trips and holidays and countries introducing travel bans.</p>          </div>
+        <div id="chart_div" style="width: 600px; height: 500px; margin: 0 auto"></div>
+        <footer style="text-align: center;" class="blockquote-footer">data from <cite title="Source Title">Flightradar24</cite></footer>
+    </div>
+<hr>
+    <div class="container">
+      <!--"Mental health" text-->
+        <h2>Mental Health</h2>
+        <p>In the UK people are dealing with the coronavirus pandemic in different ways. More than two-thirds of adults (69%)  in the UK said they were very/somewhat worried about the effect that COVID-19 is having on their life now (Office for National Statistics, 2020). The most common impact amongst the groups of people was the lack of freedom. More than 4 in 10 adults (44%) said their well-being was affected (Office for National Statistics, 2020). This was even lower for the population of people who are over 70 years. Factors contributing to the decline in well-being include:</p>
+        <!--Feelings table-->
+        <div class="container">
+            <div class="row">
+                <div class="col"></div>
+              <div class="col">
+        <style>
+    
+    
+            td, th {
+              border: 1px solid #dddddd;
+              text-align: left;
+              padding: 8px;
+            }
+            
+            tr:nth-child(even) {
+              background-color: #dddddd;
+            }
+      </style>
+      <table>
+        <tr>
+          <th>Factor</th>
+          <th>Percentage</th>
+        </tr>
+        <tr>
+          <td>Feeling worried about the future</td>
+          <td>63%</td>
+        </tr>
+        <tr>
+          <td>Feeling stressed or anxious</td>
+          <td>56%</td>
+        </tr>
+        <tr>
+          <td>Feeling bored</td>
+          <td>49%</td>
+        </tr>
+      </table>
+      </div>
+      <div class="col"></div>
+            </div>
+            <footer style="text-align: center;" class="blockquote-footer">data from <cite title="Source Title">Office for National Statistics</cite></footer>
+            <hr>
+            <!--Reference text-->
+            <div class="container text-muted">
+                <h3>Refereneces</h3>
+                <p>International Monetary Fund. (2020). World Economic Outlook Update, June 2020. Retrieved 2020,</br> 
+                    from International Monetary Fund:</br>
+                    https://www.imf.org/en/Publications/WEO/Issues/2020/06/24/WEOUpdateJune2020 </br></br>
+                    Jones, L., Palumbo, D., & Brown, D. (2020). Coronavirus: A visual guide to the economic impact.</br> Retrieved from BBC NEWS: https://www.bbc.co.uk/news/business-51706225</br></br>
+                    Lock, S. (2020). Economic contribution of travel and tourism to GDP worldwide 2006-2019. </br>Retrieved from Statista: https://www.statista.com/statistics/233223/travel-and-tourism--total-economic-contribution-worldwide/</br>
+                    Office for National Statistics. (2020). Coronavirus and the social impacts on Great Britain. 
+                    
+                    </p>
+            </div>

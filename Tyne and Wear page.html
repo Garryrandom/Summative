@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js">
+	</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js">
+	</script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js">
+	</script>
+	<link href="C:\Users\joshu\Pictures\Picture1.png" rel="icon">
+  <link href="styles.css" rel="stylesheet" type="text/css">
+  <!--AJAX API-->
+  <script src="https://www.gstatic.com/charts/loader.js" type="text/javascript">
+	</script>
+	<script type="text/javascript">
+	   google.charts.load('current', {packages: ['corechart', 'line']});
+	   google.charts.setOnLoadCallback(drawBasic);
+	   // calls function that draws the line graph from API
+	   function drawBasic() {
+	   // Creates the data table
+	         var data = new google.visualization.DataTable();
+	         data.addColumn('string', 'Month');
+	         data.addColumn('number', 'Cases per 100,000');
+	   
+	         data.addRows([
+	           ["22/09", 946.1],
+	           ["02/10", 1888.6],  
+	           ["12/10", 2959.8],  
+	           ["22/10", 3483.6],  
+	           ["01/11", 3892.7],  
+	           ["11/11", 4517.9],
+	           ["21/11", 5008.6],
+	           ["01/12", 5225.5],
+	         ]);
+	   //Sets chart options
+	         var options = { "title":"COVID-19 cases per 100,000 in Tyne and Wear",
+	           hAxis: {
+	             title: 'Month'
+	   
+	             
+	           },
+	           vAxis: {
+	             title: 'Cases',
+	           },
+	           titleTextStyle: {
+	               fontSize: 24
+	           }
+	         };
+	   //Draws the chart with options
+	         var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+	   
+	         chart.draw(data, options);
+	       }
+	</script>
+	<script type="text/javascript">
+	   google.charts.load('current', {packages: ['corechart', 'line']});
+	   google.charts.setOnLoadCallback(drawBasic);
+	   // calls function that draws the line graph from API
+	   function drawBasic() {
+	   // Creates the data table
+	         var data = new google.visualization.DataTable();
+	         data.addColumn('string', 'Month');
+	         data.addColumn('number', 'Death');
+	   
+	         data.addRows([
+	           ["22/09", 267],
+	           ["02/10", 274],
+	           ["12/10", 280], 
+	           ["22/10", 286],
+	           ["01/11", 298],
+	           ["11/11", 312],
+	           ["21/11", 324],
+	           ["01/12", 367],
+	         ]);
+	   //Sets chart options
+	         var options = { "title":"Cumulative COVID-19 deaths in Tyne and Wear",
+	           hAxis: {
+	             title: 'Month'
+	   
+	             
+	           },
+	           vAxis: {
+	             title: 'Deaths',
+	           },
+	           titleTextStyle: {
+	               fontSize: 24
+	           }
+	         };
+	   //Draws the chart with options
+	         var chart = new google.visualization.LineChart(document.getElementById('chart2_div'));
+	   
+	         chart.draw(data, options);
+	       }
+	</script>
+	<title>Tyne and Wear Statistics</title>
+</head>
+<body>
+  <!--Nav bar at top of page-->
+	<header>
+		<div class='nav-brand logo'>
+			<a href="index.html"><img alt="logo" class="logo" src="Resources/logo2.svg"></a>
+		</div>
+		<nav class="navbar navbar-expand-md">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item active">
+					<a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="page%202%20grids.html">Durham Statistics</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="North%20East%20overview.html">North East Overview</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="Effects%20of%20COVID-19.html">Effects of COVID-19</a>
+				</li>
+			</ul>
+		</nav>
+  </header>
+  <!--Start of page content-->
+	<script type="text/javascript">
+	   function visitPage(){ //Declare function visitpage()
+	       document.location='North East overview.html';
+	   }
+  </script>
+  <!--Button calls function visitpage()-->
+  <!--Takes user back to map-->
+  <button class="button button1" onclick="visitPage();">Back to map</button>
+	<div class="container">
+		<div class="row align-items-start">
+			<div class="col">
+				<br>
+				<p>The graph to the right shows the monthly increase in COVID-19 cases per 100,000 in Tyne and Wear. It is clear that the cases are on the rise with December reaching over 5,000 cases per 100,000.</p><br>
+				<br>
+				<p>Hover over the graph to see more information.</p>
+			</div>
+			<div class="grids col">
+        <!--Div holding chart 1-->
+				<div id="chart_div" style="width: 500px; height: 400px; margin: 0 auto"></div>
+			</div>
+		</div>
+		<div class="row align-items-end">
+			<div class="grids col">
+        <!--Div holding chart 2-->
+				<div id="chart2_div" style="width: 500px; height: 400px; margin: 0 auto"></div>
+			</div>
+			<div class="col">
+				<p>The graph to the right shows that the number of deaths are still increasing, with the total deaths reaching 367.</p><br>
+				<br>
+				<p>Hover over the graph to see more information.</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

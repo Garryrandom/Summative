@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js">
+	</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js">
+	</script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js">
+	</script>
+	<link href="C:\Users\joshu\Pictures\Picture1.png" rel="icon">
+	<link href="styles.css" rel="stylesheet" type="text/css">
+  
+  <!--AJAX API-->
+  <script src="https://www.gstatic.com/charts/loader.js" type="text/javascript">
+	</script>
+	<script type="text/javascript">
+	 google.charts.load('current', {packages: ['corechart', 'line']});
+	 google.charts.setOnLoadCallback(drawBasic);
+   
+   // calls function that draws the line graph from API
+	 function drawBasic() { 
+	 // Creates the data table
+	       var data = new google.visualization.DataTable();
+	       data.addColumn('string', 'Date');
+	       data.addColumn('number', 'Cases per 100k');
+	 
+	       data.addRows([
+	         ["22/09", 830.0],
+	         ["02/10", 1062.8],  
+	         ["12/10", 1541.4],  
+	         ["22/10", 2047.0],  
+	         ["01/11", 2433.0],  
+	         ["11/11", 3012.5],
+	         ["21/11", 3439.0],
+	         ["01/12", 3669.2],
+	       ]);
+	 //Sets chart options
+	       var options = { "title":"COVID-19 cases per 100,000 in County Durham",
+	         hAxis: {
+	           title: 'Date  '
+	 
+	           
+	         },
+	         vAxis: {
+	           title: 'Cases',
+	         },
+	         titleTextStyle: {
+	             fontSize: 24
+	         }
+	       };
+	 //Draws the chart with options
+	       var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+	 
+	       chart.draw(data, options);
+	     }
+	</script>
+	<script type="text/javascript">
+	     google.charts.load('current', {'packages':['bar']});
+	     google.charts.setOnLoadCallback(drawChart);
+ // calls function that draws the line graph from API
+	     function drawChart() {
+         // Creates the data table
+	       var data = google.visualization.arrayToDataTable([
+	         ['Age Group','Cases'],
+	         ['0-19', 3303],
+	         ['20-39', 3726],
+	         ['40-59', 3307],
+	         ['60-79', 1606],
+	         ['80+', 1104],
+	       ]);
+//Sets chart options
+	       var options = {
+	         chart: {
+	title: 'Cases by Age & Gender',
+	         },
+	         bars: 'vertical',
+	         colors: ['#1b9e77', '#27b9f3'],
+	       };
+
+//Draws the chart with options
+	       var chart = new google.charts.Bar(document.getElementById('chart2_div'));
+
+	       chart.draw(data, google.charts.Bar.convertOptions(options));
+	     }
+	</script>
+	<script type="text/javascript">
+	 google.charts.load('current', {packages: ['corechart', 'line']});
+	 google.charts.setOnLoadCallback(drawBasic);
+	  // calls function that draws the line graph from API
+	 function drawBasic() {
+	 // Creates the data table
+	       var data = new google.visualization.DataTable();
+	       data.addColumn('string', 'Month');
+	       data.addColumn('number', 'Deaths');
+	 
+	       data.addRows([
+	         ["02/10", 712],  
+	         ["12/10", 733],  
+	         ["22/10", 761],  
+	         ["01/11", 805],  
+	         ["11/11", 849],
+	         ["21/11", 893],
+	         ["01/12", 950],
+	       ]);
+	 //Sets chart options
+	       var options = { "title":"Cumulative COVID-19 deaths in Durham",
+	         hAxis: {
+	           title: 'Month'
+	 
+	           
+	         },
+	         vAxis: {
+	           title: 'Deaths',
+	         },
+	         titleTextStyle: {
+	             fontSize: 24
+	         }
+	       };
+	 //Draws the chart with options
+	       var chart = new google.visualization.LineChart(document.getElementById('chart3_div'));
+	 
+	       chart.draw(data, options);
+	     }
+	</script>
+	<title>Durham Statistics</title>
+</head>
+<body>
+  <!--Nav bar at top of page-->
+	<header>
+		<div class='nav-brand logo'>
+			<a href="index.html"><img alt="logo" class="logo" src="Resources/logo2.svg"></a>
+		</div>
+		<nav class="navbar navbar-expand-md">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item active">
+					<a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="page%202%20grids.html">Durham Statistics</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="North%20East%20overview.html">North East Overview</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="Effects%20of%20COVID-19.html">Effects of COVID-19</a>
+				</li>
+			</ul>
+		</nav>
+  </header>
+  <!--Start of page content-->
+	<div class="container">
+		<div class="row align-items-start">
+			<div class="col">
+				<br>
+				<p>The graph to the right shows the monthly increase in COVID-19 cases per 100,000 in Durham. It is clear that the cases are on the rise with November reaching over 3,500 cases per 100,000.</p><br>
+				<br>
+				<p>Hover over the graph to see more information.</p>
+			</div>
+			<div class="grids col">
+      <!--Div holding chart 1-->
+				<div id="chart_div" style="width: 500px; height: 400px; margin: 0 auto"></div>
+			</div>
+		</div>
+		<div class="row align-items-center">
+			<div class="grids col">
+        <!--Div holding chart 2-->
+				<div id="chart2_div" style="width: 500px; height: 400px; margin: 0 auto"></div>
+			</div>
+			<div class="col">
+				<p>The graph to the left shows the number of COVID-19 cases per age group. The age group 20-39 is the most affected group with nearly 4,000 cases since March.</p><br>
+				<br>
+				<p>Hover over the graph to see more information.</p>
+			</div>
+			<div class="row align-items-end">
+				<div class="col">
+					<br>
+					<p>The graph to the right shows that the number of deaths are still increasing, with the total deaths reaching 950.</p><br>
+					<br>
+					<p>Hover over the graph to see more information.</p><br>
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+				</div>
+				<div class="grids col">
+          <!--Div holding chart 3-->
+					<div id="chart3_div" style="width: 500px; height: 400px; margin: 0 auto"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
