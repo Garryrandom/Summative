@@ -14,86 +14,7 @@
   <!--AJAX API-->
   <script src="https://www.gstatic.com/charts/loader.js" type="text/javascript">
 	</script>
-	<script type="text/javascript">
-	   google.charts.load('current', {packages: ['corechart', 'line']});
-	   google.charts.setOnLoadCallback(drawBasic);
-	   // calls function that draws the line graph from API
-	   function drawBasic() {
-	   // Creates the data table
-	         var data = new google.visualization.DataTable();
-	         data.addColumn('string', 'Month');
-	         data.addColumn('number', 'Cases per 100,000');
-	   
-	         data.addRows([
-	           ["22/09", 702.2],
-	           ["02/10", 932.6],  
-	           ["12/10", 1164.0],  
-	           ["22/10", 1417.0],  
-	           ["01/11", 1682.2],  
-	           ["11/11", 2094.4],
-	           ["21/11", 2441.4],
-	           ["01/12", 2663.8],
-	         ]);
-	   //Sets chart options
-	         var options = { "title":"COVID-19 cases per 100,000 in Northumberland",
-	           hAxis: {
-	             title: 'Month'
-	   
-	             
-	           },
-	           vAxis: {
-	             title: 'Cases',
-	           },
-	           titleTextStyle: {
-	               fontSize: 24
-	           }
-	         };
-	   //Draws the chart with options
-	         var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
-	   
-	         chart.draw(data, options);
-	       }
-	</script>
-	<script type="text/javascript">
-	   google.charts.load('current', {packages: ['corechart', 'line']});
-	   google.charts.setOnLoadCallback(drawBasic);
-	   // calls function that draws the line graph from API
-	   function drawBasic() {
-	   // Creates the data table
-	         var data = new google.visualization.DataTable();
-	         data.addColumn('string', 'Month');
-	         data.addColumn('number', 'Death');
-	   
-	         data.addRows([
-	           ["22/09", 296],
-	           ["02/10", 311],
-	           ["12/10", 321], 
-	           ["22/10", 334],
-	           ["01/11", 341],
-	           ["11/11", 359],
-	           ["21/11", 372],
-	           ["01/12", 425],
-	         ]);
-	   //Sets chart options
-	         var options = { "title":"Cumulative COVID-19 deaths in Northumberland",
-	           hAxis: {
-	             title: 'Month'
-	   
-	             
-	           },
-	           vAxis: {
-	             title: 'Deaths',
-	           },
-	           titleTextStyle: {
-	               fontSize: 24
-	           }
-	         };
-	   //Draws the chart with options
-	         var chart = new google.visualization.LineChart(document.getElementById('chart2_div'));
-	   
-	         chart.draw(data, options);
-	       }
-  </script>
+<script src="northumberlandgraphs.js"></script>
   <title>Northumberland Statistics</title>
 </head>
 <body>
@@ -120,11 +41,6 @@
 		</nav>
   </header>
   <!--Start of page content-->
-	<script type="text/javascript">
-	   function visitPage(){ //Declare function visitpage()
-	       document.location='North East overview.html';
-	   }
-  </script> 
   <!--Button calls function visitpage()-->
   <!--Takes user back to map-->
   <button class="button button1" onclick="visitPage();">Back to map</button>
@@ -134,24 +50,49 @@
 				<br>
 				<p>The graph to the right shows the monthly increase in COVID-19 cases per 100,000 in Northumberland. It is clear that the cases are on the rise with December reaching over 2,500 cases per 100,000.</p><br>
 				<br>
-				<p>Hover over the graph to see more information.</p>
 			</div>
 			<div class="grids col">
         <!--Div holding chart 1-->
 				<div id="chart_div" style="width: 500px; height: 400px; margin: 0 auto"></div>
+				<footer style="text-align: center;" class="blockquote-footer">data from <cite title="Source Title">LG Inform</cite></footer>
+				<p class="calign">Hover over the graph to see more information.</p>
 			</div>
 		</div>
 		<div class="row align-items-end">
 			<div class="grids col">
         <!--Div holding chart 2-->
 				<div id="chart2_div" style="width: 500px; height: 400px; margin: 0 auto"></div>
+				<footer style="text-align: center;" class="blockquote-footer">data from <cite title="Source Title">LG Inform</cite></footer>
+				<p class="calign">Hover over the graph to see more information.</p>
 			</div>
 			<div class="col">
-				<p>The graph to the right shows that the number of deaths are still increasing, with the total deaths reaching 425.</p><br>
+				<p>The graph to the left shows that the number of deaths are still increasing, with the total deaths reaching 425.</p><br>
 				<br>
-				<p>Hover over the graph to see more information.</p>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
 			</div>
 		</div>
 	</div>
+	<hr>
+	<!--Hospital avaiability section-->
+	<div class="container">
+		<h3>Hospital availability </h3>
+		<ul>
+			<li><a href="https://www.northumbria.nhs.uk/our-locations/wansbeck-general-hospital">Wansbeck General Hospital</a></li>
+			<li><a href="https://www.northumbria.nhs.uk/our-locations/northumbria-specialist-emergency-care-hospital">Northumbria Specialist Emergency Care Hospital</a></li>
+			<li><a href="https://www.northumbria.nhs.uk/our-locations/hexham-general-hospital">Hexham General Hospital</a></li>
+			
+	</div>
+	<hr>
+            <!--Reference text-->
+            <div class="container text-muted">
+				<h3>References</h3>
+				<p>Local Government Association. 2020. Retrieved 2020,</br>
+					<a href="https://lginform.local.gov.uk/">https://lginform.local.gov.uk/</a>
+				</p>
 </body>
 </html>
