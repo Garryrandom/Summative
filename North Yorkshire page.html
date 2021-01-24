@@ -14,86 +14,7 @@
   <!--AJAX API-->
   <script src="https://www.gstatic.com/charts/loader.js" type="text/javascript">
   </script>
-	<script type="text/javascript">
-	   google.charts.load('current', {packages: ['corechart', 'line']});
-	   google.charts.setOnLoadCallback(drawBasic);
-	   // calls function that draws the line graph from API
-	   function drawBasic() {
-	   // Creates the data table
-	         var data = new google.visualization.DataTable();
-	         data.addColumn('string', 'Month');
-	         data.addColumn('number', 'Cases per 100,000');
-	   
-	         data.addRows([
-	           ["22/09", 687.0],
-	           ["02/10", 756.1],  
-	           ["12/10", 805.6],  
-	           ["22/10", 1021.1],  
-	           ["01/11", 1294.2],  
-	           ["11/11", 1743.4],
-	           ["21/11", 2042.7],
-	           ["01/12", 2202.2],
-	         ]);
-	   //Sets chart options
-	         var options = { "title":"COVID-19 cases per 100,000 in North Yorkshire",
-	           hAxis: {
-	             title: 'Month'
-	   
-	             
-	           },
-	           vAxis: {
-	             title: 'Cases',
-	           },
-	           titleTextStyle: {
-	               fontSize: 24
-	           }
-	         };
-	   //Draws the chart with options
-	         var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
-	   
-	         chart.draw(data, options);
-	       }
-	</script>
-	<script type="text/javascript">
-	   google.charts.load('current', {packages: ['corechart', 'line']});
-	   google.charts.setOnLoadCallback(drawBasic);
-	   // calls function that draws the line graph from API
-	   function drawBasic() {
-	   // Creates the data table
-	         var data = new google.visualization.DataTable();
-	         data.addColumn('string', 'Month');
-	         data.addColumn('number', 'Death');
-	   
-	         data.addRows([
-	           ["22/09", 565],
-	           ["02/10", 569],
-	           ["12/10", 577], 
-	           ["22/10", 584],
-	           ["01/11", 595],
-	           ["11/11", 617],
-	           ["21/11", 690],
-	           ["01/12", 714],
-	         ]);
-	   //Sets chart options
-	         var options = { "title":"Cumulative COVID-19 deaths in North Yorkshire",
-	           hAxis: {
-	             title: 'Month'
-	   
-	             
-	           },
-	           vAxis: {
-	             title: 'Deaths',
-	           },
-	           titleTextStyle: {
-	               fontSize: 24
-	           }
-	         };
-	   //Draws the chart with options
-	         var chart = new google.visualization.LineChart(document.getElementById('chart2_div'));
-	   
-	         chart.draw(data, options);
-	       }
-	</script>
+<script src="northyorkgraphs.js"></script>
 	<title>North Yokrshire Statistics</title>
 </head>
 <body>
@@ -120,11 +41,6 @@
 		</nav>
   </header>
   <!--Start of page content-->
-	<script type="text/javascript">
-	   function visitPage(){ //Declare function visitpage()
-	       document.location='North East overview.html';
-	   }
-  </script>
   <!--Button calls function visitpage()-->
   <!--Takes user back to map-->
    <button class="button button1" onclick="visitPage();">Back to map</button> 
@@ -135,25 +51,50 @@
 					<br>
 					<p>The graph to the right shows the monthly increase in COVID-19 cases per 100,000 in North Yorkshire. It is clear that the cases are on the rise with December reaching over 2,000 cases per 100,000.</p><br>
 					<br>
-					<p>Hover over the graph to see more information.</p>
 				</div>
 				<div class="grids col">
           <!--Div holding chart 1-->
 					<div id="chart_div" style="width: 500px; height: 400px; margin: 0 auto"></div>
+					<footer style="text-align: center;" class="blockquote-footer">data from <cite title="Source Title">LG Inform</cite></footer>
+					<p class="calign">Hover over the graph to see more information.</p>
 				</div>
 			</div>
 			<div class="row align-items-end">
 				<div class="grids col">
           <!--Div holding chart 2-->
 					<div id="chart2_div" style="width: 500px; height: 400px; margin: 0 auto"></div>
+					<footer style="text-align: center;" class="blockquote-footer">data from <cite title="Source Title">LG Inform</cite></footer>
+					<p class="calign">Hover over the graph to see more information.</p>
 				</div>
 				<div class="col">
-					<p>The graph to the right shows that the number of deaths are still increasing, with the total deaths reaching 714.</p><br>
+					<p>The graph to the left shows that the number of deaths are still increasing, with the total deaths reaching 714.</p><br>
 					<br>
-					<p>Hover over the graph to see more information.</p>
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
 				</div>
 			</div>
 		</div>
 	</div>
+	<hr>
+	<!--Hospital avaiability section-->
+	<div class="container">
+		<h3>Hospital availability </h3>
+		<ul>
+			<li><a href="https://www.southtees.nhs.uk/hospitals/friarage/">Friarage Hospital</a></li>
+			<li><a href="https://www.hdft.nhs.uk/services/minor-injuries-unit/">Ripon Community Hospital</a></li>
+			<li><a href="http://www.yorkhospitals.nhs.uk/">Scarborough General Hospital</a></li>
+			
+	</div>
+	<hr>
+            <!--Reference text-->
+            <div class="container text-muted">
+				<h4>References</h4>
+				<p>Local Government Association. 2020. Retrieved 2020,</br>
+					<a href="https://lginform.local.gov.uk/">https://lginform.local.gov.uk/</a>
+				</p>
 </body>
 </html>
