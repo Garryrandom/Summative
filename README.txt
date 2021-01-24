@@ -9,3 +9,5 @@ The graphs are created using google charts and all other information sourced fro
 The logo for the website was created by me and the image of the North East region was sourced from Wikipedia.
 
 The website was made using HTML/CSS, using the web framework Bootstrap and the graphs are made using javascript.
+
+Since each page uses the same javascript code with diffrent data, there is one JSDoc for all the JS files.
